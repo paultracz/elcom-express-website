@@ -135,6 +135,7 @@ body, html {
     background-color: #ffffff;
     width: 100%;
     padding: 3em 2em;
+    text-align: center;
 }
 
 .featured-projects h2 {
@@ -145,7 +146,81 @@ body, html {
 .featured-projects p {
     font-size: 1.1em;
     color: #666;
+    margin-bottom: 2em;
 }
+
+/* Grid Layout for Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Fixed 2 columns */
+    grid-template-rows: auto auto auto; /* Fixed 3 rows */
+    gap: 2em;
+    margin-top: 2em;
+    justify-items: center;
+    align-items: center;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    max-width: 500px; /* Limiting width for consistency */
+}
+
+/* Image inside Project Item */
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Project Info (Overlay on Image) */
+.project-item .project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-item:hover .project-info {
+    opacity: 1;
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.project-item p {
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
 
 /* Contact Us */
 .contact-us {
