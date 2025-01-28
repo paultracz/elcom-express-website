@@ -139,12 +139,13 @@ body, html {
 }
 
 .featured-projects h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #333;
+    margin-bottom: 1em;
 }
 
 .featured-projects p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #666;
     margin-bottom: 2em;
 }
@@ -152,69 +153,79 @@ body, html {
 /* Grid Layout for Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Exactly 2 columns */
-    grid-template-rows: 1fr 1fr 1fr; /* Exactly 3 rows */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     gap: 2em;
     margin-top: 2em;
     justify-items: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Optional: adjust based on how wide you want the grid */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ensure grid items don't overflow */
+/* Each grid item contains both image and text */
 .grid-item {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
     width: 100%;
-    height: 100%;
-    max-width: 500px; /* Adjust as necessary for each grid item */
+    max-width: 500px;
     box-sizing: border-box;
 }
 
 /* Image inside Project Item */
-.grid-item img {
+.image-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensures images cover the assigned space */
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Project Info (Overlay on Image) */
-.grid-item .project-info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+/* Project Info (Text) */
+.text-item {
+    text-align: left;
+    padding: 1.5em;
 }
 
-/* Hover Effects */
+.text-item h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.text-item p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+/* Hover Effects (Scale on Hover) */
 .grid-item:hover {
     transform: scale(1.05);
 }
 
-.grid-item:hover .project-info {
-    opacity: 1;
-}
-
-/* Responsive Adjustments */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .projects-grid {
-        grid-template-columns: 1fr 1fr; /* Keep 2 columns */
-        grid-template-rows: 1fr 1fr 1fr; /* Keep 3 rows */
+        grid-template-columns: 1fr;  /* Stack items in a single column */
+    }
+
+    .grid-item {
+        flex-direction: column; /* Stack text and image vertically on mobile */
+    }
+
+    /* Ensure text comes before image in odd-indexed items */
+    .grid-item:nth-child(odd) .text-item {
+        order: 1;
+    }
+
+    /* Ensure text comes after image in even-indexed items */
+    .grid-item:nth-child(even) .text-item {
+        order: 2;
     }
 }
-
 
 /* Contact Us */
 .contact-us {
