@@ -326,6 +326,59 @@ body, html {
     color: #fff;
 }
 
+/* About Page Styles */
+.about-section {
+    padding: 2em 0;
+}
+
+.about-section h1,
+.about-section h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.team-grid {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    width: 30%;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #555;
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .contact-us .content-wrapper {
