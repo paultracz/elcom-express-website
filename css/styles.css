@@ -153,7 +153,7 @@ body, html {
 /* Grid Layout for Projects */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
     gap: 2em;
     margin-top: 2em;
     justify-items: center;
@@ -226,6 +226,32 @@ body, html {
     /* Ensure text comes after image in even-indexed items */
     .grid-item:nth-child(even) .text-item {
         order: 2;
+    }
+    /* Navigation links */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1em 0;
+    }
+    
+    .nav-links a {
+        padding: 1em;
+        border-bottom: 1px solid #333;
+    }
+    
+    /* Show the hamburger menu */
+    #menu-toggle {
+        display: block;
+    }
+    
+    /* When menu is active, show links */
+    .nav-links.nav-active {
+        display: flex;
     }
 }
 
@@ -328,69 +354,71 @@ body, html {
 
 /* About Page Styles */
 .about-section {
-    padding: 2em 0;
+    padding: 4em 2em;  /* Add padding to the top and bottom */
+    background-color: #f8f8f8;  /* Light background for contrast */
+    width: 100%;
+}
+
+.about-section .content-wrapper {
+    max-width: 1200px;  /* Limit the width to match the index page */
+    margin: 0 auto;    /* Center the content */
+    padding: 0 2em;    /* Add horizontal padding for better spacing */
 }
 
 .about-section h1,
 .about-section h2 {
-    font-size: 2em;
+    font-size: 2.5em;  /* Larger font size for headings */
     color: #333;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
+    text-align: center;  /* Center-align the headings */
 }
 
 .about-section p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.6;
     color: #555;
-    margin-bottom: 1.5em;
+    text-align: justify;  /* Justify text for a more polished look */
+    margin-bottom: 2em;  /* Add some space after paragraphs */
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.about-section ul {
+    margin-top: 2em;
+    padding-left: 2em;
 }
 
-.team-grid {
+.about-section li {
+    font-size: 1.1em;
+    margin-bottom: 0.5em;  /* Space between list items */
+}
+
+.about-section .team-grid {
     display: flex;
     gap: 2em;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3em;  /* Space between text and team grid */
 }
 
 .team-member {
-    width: 30%;
     text-align: center;
+    max-width: 300px;  /* Limit the width of team member cards */
+    margin: 0 auto;
 }
 
 .team-member img {
     width: 100%;
+    height: 200px;  /* Set a fixed height for images */
+    object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .team-member h3 {
-    font-size: 1.2em;
+    margin-top: 1em;
+    font-size: 1.5em;
     color: #333;
 }
 
 .team-member p {
-    font-size: 1em;
-    color: #555;
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .contact-us .content-wrapper {
-        padding: 0 2em;  /* Increase padding on smaller screens */
-    }
-
-    .contact-us form {
-        gap: 1em;  /* Smaller gap on mobile */
-    }
-
-    .contact-us button {
-        padding: 1em;  /* Adjust button padding on mobile */
-        font-size: 1.1em;
-    }
+    color: #777;
+    font-size: 1.1em;
 }
