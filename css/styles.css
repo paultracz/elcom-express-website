@@ -157,7 +157,7 @@ body, html {
     gap: 2em;
     margin-top: 2em;
     justify-items: center;
-    align-items: center;
+    align-items: stretch; /* Ensure grid items stretch to the same height */
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
@@ -171,6 +171,7 @@ body, html {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
+    align-items: stretch; /* Make grid items stretch to the full height */
 }
 
 /* Image inside Project Item */
@@ -186,6 +187,7 @@ body, html {
 .text-item {
     text-align: left;
     padding: 1.5em;
+    flex-grow: 1; /* Allow text to take the remaining space */
 }
 
 .text-item h3 {
@@ -226,6 +228,7 @@ body, html {
         order: 2;
     }
 }
+
 
 /* Contact Us */
 .contact-us {
