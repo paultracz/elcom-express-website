@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | ECE Electrical Services</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../assets/images/logoECE.svg" alt="ECE Electrical Services Logo">
+            </a>
+        </div>
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Exceptional Electrical Services</h1>
+        <p>Serving GTA with over 20 years of experience in commercial and industrial projects.</p>
+        <button class="cta-button">Get a Quote</button>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
+        <div class="content-wrapper">
+            <h2>Featured Projects</h2>
+            <p>Explore our portfolio, including work for clients like "Love it or List it," Staples, and Giant Tiger.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <div class="content-wrapper">
+            <h2>Contact Us</h2>
+            <p>For inquiries, feel free to reach out.</p>
+            <!-- Updated form action to match the backend route -->
+            <form id="contact-form" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
