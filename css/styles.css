@@ -59,22 +59,26 @@ body, html {
     width: 100%;
     min-height: 70vh;
     gap: 2em;
+    text-align: center; /* Ensure text is centered */
 }
 
+/* Hero content should also be centered */
 .hero-content {
     flex: 1;
-    text-align: left;
+    text-align: center; /* Center the text content */
+    padding: 0 1em; /* Optional: Add some horizontal padding for mobile */
 }
 
+/* Hero heading and paragraph should adjust on smaller screens */
 .hero h1 {
-    font-size: 3em;
+    font-size: 2.5em; /* Adjust size for mobile */
     font-weight: bold;
     margin-bottom: 0.5em;
     color: #e60000;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.1em; /* Adjust size for mobile */
     margin-bottom: 1.5em;
     color: #d0d0d0;
     line-height: 1.5;
@@ -82,7 +86,10 @@ body, html {
 
 .cta-container {
     display: flex;
-    gap: 1em;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    width: 100%; /* Ensures buttons take up full width for centering */
+    margin-top: 20px; /* Space above buttons */
 }
 
 .cta-button {
@@ -121,8 +128,10 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2em;  /* Adds some spacing on top for mobile */
 }
 
+/* Make sure hero image is responsive */
 .hero-image img {
     width: 100%;
     max-width: 500px;
@@ -252,6 +261,26 @@ body, html {
     /* When menu is active, show links */
     .nav-links.nav-active {
         display: flex;
+    }
+    .hero {
+        flex-direction: column;  /* Stack content vertically */
+        text-align: center;  /* Center align text for mobile */
+    }
+
+    .hero-content {
+        margin-bottom: 2em;  /* Space between content and image on mobile */
+    }
+
+    .hero-image {
+        margin-top: 3em;  /* Add margin to move the image down a bit */
+    }
+
+    .hero h1 {
+        font-size: 2.5em;  /* Adjust the font size of the title */
+    }
+
+    .hero p {
+        font-size: 1.1em;  /* Adjust the font size of the paragraph */
     }
 }
 
