@@ -14,6 +14,25 @@ body, html {
     width: 100%;
 }
 
+/* General Image Formatting */
+img {
+    max-width: 100%; /* Ensures that images don't overflow */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Adds rounded corners */
+    display: block; /* Ensures images take up space and don't affect text layout */
+    margin-bottom: 20px; /* Adds space below images */
+}
+
+.about-image img,
+.mission img,
+.vision img,
+.why-choose-image img {
+    display: block;
+    margin: 0 auto;
+    width: 80%; /* Set a fixed width */
+    height: 80%; /* Set a fixed height */
+}
+
 /* Header Styles */
 .header {
     display: flex;
@@ -282,6 +301,7 @@ body, html {
     .hero p {
         font-size: 1.1em;  /* Adjust the font size of the paragraph */
     }
+    
 }
 
 /* Contact Us */
@@ -383,7 +403,7 @@ body, html {
 
 /* About Page Styles */
 .about-section {
-    padding: 4em 2em;  /* Add padding to the top and bottom */
+    padding: 2em 0;  /* Add padding to the top and bottom */
     background-color: #f8f8f8;  /* Light background for contrast */
     width: 100%;
 }
