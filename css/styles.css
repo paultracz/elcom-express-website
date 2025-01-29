@@ -471,3 +471,38 @@ img {
     color: #777;
     font-size: 1.1em;
 }
+
+/* Footer Styles */
+.footer {
+    padding: 1em 0;
+    text-align: center;
+}
+
+.footer .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info p {
+    margin: 0.5em 0;
+}
+
+.footer-nav {
+    margin: 1em 0;
+}
+
+.footer-nav a {
+    color: #fff;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+.footer-social a {
+    margin: 0 0.5em;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+}
